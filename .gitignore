@@ -63,3 +63,4 @@ dmypy.json
 
 # marimo
 .marimo/
+__marimo__/
