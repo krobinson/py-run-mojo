@@ -32,7 +32,7 @@ Example:
     result = fibonacci(10)
 """
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 __author__ = "Michael Booth"
 __email__ = "michael@databooth.com.au"
 

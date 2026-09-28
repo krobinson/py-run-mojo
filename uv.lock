@@ -1802,14 +1802,9 @@ wheels = [
 
 [[package]]
 name = "py-run-mojo"
-version = "0.1.3"
 source = { editable = "." }
 dependencies = [
-    { name = "ipykernel" },
-    { name = "marimo" },
     { name = "mojo" },
-    { name = "numpy" },
-    { name = "plotly" },
 ]
 
 [package.optional-dependencies]
@@ -1819,37 +1814,51 @@ dev = [
     { name = "ruff" },
     { name = "ty" },
 ]
+notebooks = [
+    { name = "ipykernel" },
+    { name = "marimo" },
+    { name = "numpy" },
+    { name = "plotly" },
+]
 
 [package.dev-dependencies]
 dev = [
     { name = "hatch" },
+    { name = "ipykernel" },
     { name = "jupytext" },
+    { name = "marimo" },
     { name = "nbformat" },
     { name = "notebook" },
+    { name = "numpy" },
+    { name = "plotly" },
     { name = "pytest" },
     { name = "pytest-cov" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "ipykernel", specifier = ">=7.1.0" },
-    { name = "marimo", specifier = ">=0.23.3" },
+    { name = "ipykernel", marker = "extra == 'notebooks'", specifier = ">=7.1.0" },
+    { name = "marimo", marker = "extra == 'notebooks'", specifier = ">=0.23.3" },
     { name = "mojo" },
-    { name = "numpy", specifier = ">=2.4.1" },
-    { name = "plotly", specifier = ">=6.5.2" },
+    { name = "numpy", marker = "extra == 'notebooks'", specifier = ">=2.4.1" },
+    { name = "plotly", marker = "extra == 'notebooks'", specifier = ">=6.5.2" },
     { name = "pytest", marker = "extra == 'dev'" },
     { name = "pytest-cov", marker = "extra == 'dev'" },
     { name = "ruff", marker = "extra == 'dev'" },
     { name = "ty", marker = "extra == 'dev'" },
 ]
-provides-extras = ["dev"]
+provides-extras = ["dev", "notebooks"]
 
 [package.metadata.requires-dev]
 dev = [
     { name = "hatch", specifier = ">=1.9.0" },
+    { name = "ipykernel", specifier = ">=7.1.0" },
     { name = "jupytext", specifier = ">=1.19.0" },
+    { name = "marimo", specifier = ">=0.23.3" },
     { name = "nbformat", specifier = ">=5.10.4" },
     { name = "notebook", specifier = ">=7.5.2" },
+    { name = "numpy", specifier = ">=2.4.1" },
+    { name = "plotly", specifier = ">=6.5.2" },
     { name = "pytest", specifier = ">=7.4.4" },
     { name = "pytest-cov", specifier = ">=4.1.0" },
 ]

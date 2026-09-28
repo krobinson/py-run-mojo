@@ -5,7 +5,7 @@ def test_package_imports():
     """Test that the package can be imported."""
     import py_run_mojo
 
-    assert py_run_mojo.__version__ == "0.1.2"
+    assert py_run_mojo.__version__ == "0.1.3"
     assert py_run_mojo.__author__ == "Michael Booth"
 
 
