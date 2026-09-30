@@ -14,7 +14,7 @@
 2. **Executor** (`run_mojo()`) - Dynamic execution from strings or files, great for code generation
 3. **Extension Module** - Compiled `.so` files for zero-overhead FFI calls (~1000× faster than subprocess)
 
-**Works everywhere:** Jupyter notebooks, marimo, VSCode notebooks, Google Colab, IPython REPL, or standalone Python scripts. The core library has no notebook-specific dependencies.
+**Works everywhere:** Jupyter notebooks, marimo, VSCode notebooks, Google Colab, IPython REPL, or standalone Python scripts. The core library has no notebook-specific dependencies — install the `notebooks` extra if you want the example notebooks and visualisations.
 
 ```python
 from py_run_mojo import mojo
@@ -81,13 +81,29 @@ See [ROADMAP.md](docs/ROADMAP.md) for full details:
 
 ## Installation
 
+### From PyPI (recommended for use in other projects)
+
+The core library is lightweight: its only hard dependency is the `mojo` package, which provides the Mojo compiler.
+
+```bash
+uv add py-run-mojo        # or: pip install py-run-mojo
+```
+
+If you also want to run the example notebooks and visualisations, install the `notebooks` extra (marimo, Jupyter, numpy, plotly):
+
+```bash
+uv add "py-run-mojo[notebooks]"        # or: pip install "py-run-mojo[notebooks]"
+```
+
+### From source (for development)
+
 `py-run-mojo` supports both `uv` (recommended) and `pixi` for environment management.
 
-### Prerequisites
+#### Prerequisites
 
 **None!** Mojo is now installed automatically as a Python package dependency.
 
-### Option 1: uv (Recommended)
+#### Option 1: uv (Recommended)
 
 ```bash
 # Clone the repository
@@ -104,7 +120,7 @@ uv run python scripts/verify_setup.py
 uv run marimo edit notebooks/example_notebook.py
 ```
 
-### Option 2: pixi
+#### Option 2: pixi
 
 ```bash
 # Clone the repository
